@@ -3,6 +3,13 @@ class Node:
     def __init__(self,data):
         self.__data=data
         self.__next=None
+#Linked List class
+class LinkedList:
+    def __init__(self):
+        self.__header=None
+    def isEmpty(self):
+        return self.__header==None
+    
 #Task class
 class Task:
     def __init__(self,description:str,priority:int,completed=False):
