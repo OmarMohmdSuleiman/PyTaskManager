@@ -69,6 +69,14 @@ class Task:
         return self.__completed
     def setCompleted(self,completed):
         self.__completed=True
+
+#Task Manager class
+class TaskManager:
+    def __init__(self,task):
+        self.__task=task
+    
+
+
         
 
 
