@@ -13,6 +13,7 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.__header=None
+        self.__top=None
     def isEmpty(self):
         return self.__header==None
     #add priority queue
@@ -36,6 +37,17 @@ class LinkedList:
 
         previous.setNext(new_node)
         new_node.setNext(current)
+    #making Stack method
+    def isStackEmpty(self):
+        self.__top==None
+    def pushStack(self,new_node):
+        new_node=Node(data)
+        if (self.isStackEmpty()):
+            self.__top=new_node
+        else:    
+            new_node.setNext(self.__top)
+            self.__top=new_node
+
     
 #Task class
 class Task:
