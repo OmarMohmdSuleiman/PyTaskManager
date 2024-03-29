@@ -183,37 +183,46 @@ def displayMenu():
     
 def main():
     displayMenu()
-    choice = int(input("Enter Your Choice: "))
-    
+    restart = "y"
+    while restart == "y" or restart == "Yes":
+        choice = int(input("Enter Your Choice: "))
+        if choice == 1:
+            user_description = input("Enter Task Description: ")
+            user_priority = input("Enter Task Priority: ")
 
-    if choice == 1:
-        user_description = input("Enter Task Description: ")
-        user_priority = input("Enter Task Priority: ")
-
-        task = PriorityQueue()
-        task.enqueue(user_description, user_priority)
-        print("added")
-    
-    if choice == 2:
-        pass
-
-    if choice == 3:
-        ll = LinkedList()
-        tm = TaskManager()
-
-        ll.markAsCompleted()
+            task = PriorityQueue()
+            task.enqueue(user_description, user_priority)
+            print("added")
         
-    if choice == 4:
-        pq = PriorityQueue()
-        pq.displayPriorityQueue()
+        elif choice == 2:
+            pass
 
-    if choice == 5:
-        ll = LinkedList()
-        ll.markAsNotCompleted()
-    
-    if choice == 6:
-        ll = LinkedList()
-        ll.markAsCompleted
+        elif choice == 3:
+            ll = LinkedList()
+            tm = TaskManager()
+
+            ll.markAsCompleted()
+            
+        elif choice == 4:
+            pq = PriorityQueue()
+            pq.displayPriorityQueue()
+
+        elif choice == 5:
+            ll = LinkedList()
+            ll.markAsNotCompleted()
+        
+        elif choice == 6:
+            ll = LinkedList()
+            ll.getLastCompleted()
+
+        elif choice == 7:
+            print("Exited")
+        
+        else:
+            print("Invalid Choice")
+        restart = input("Do You Want To Do Another Thing(y/n): ")
+
+
 
 
 
