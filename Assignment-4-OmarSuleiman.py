@@ -94,6 +94,14 @@ class LinkedList:
 
             current = current.getNext()
         return lst
+    def getLastCompleted(self):
+        current=self.__header
+        while current.getCompleted():
+            previous = current
+            current = current.getNext()
+        return previous
+
+
     def displayLinkedList(self):
         if self.isEmpty():
             print("empty")
