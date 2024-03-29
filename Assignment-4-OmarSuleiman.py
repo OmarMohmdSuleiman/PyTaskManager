@@ -81,6 +81,7 @@ class LinkedList:
         while current:
             if current.getCompleted()==False:
                 self.__header.setCompleted(True)
+                
                 break
             self.__header=current.getNext()
     def displayLinkedList(self):
@@ -130,23 +131,33 @@ class PriorityQueue():
 
         self.__linkedlist.displayCompleted()
 
-    
+class Stack:
+
+
+    def __init__(self):
+        self.__lst = []
+
+    def isEmpty(self):
+        return len(self.__lst) == 0
+
+
+    def push(self, desc,prio):
+
+        self.__lst.insert(0,desc,prio)   
 
 
 #Task Manager class
 class TaskManager:
-    def __init__(self,task):
-        self.__task=task
-    def queueTask(self):
-        LinkedList.addNodeWithPriority()
-        
+    def __init__(self):
+        self.__task_queue=PriorityQueue()
+        self.__task_history=Stack()
 
 
-        
-
-
-        
-
-
-
-        
+def displayMenu():
+    print('''1. Adding a new task to the task manager.
+          \n2. Getting a task from the queue given a task id.
+          \n3. Marking the highest priority task as completed and putting it in the task history.
+          \n4. Displaying all tasks in order of priority.
+          \n5. Displaying only the tasks that are not completed.
+          \n6. Displaying the last completed task.
+          \n7. Exit''')
