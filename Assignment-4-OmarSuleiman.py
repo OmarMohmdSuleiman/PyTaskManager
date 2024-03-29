@@ -1,14 +1,29 @@
-#Node class
-class Node:
-    def __init__(self,data):
-        self.__data=data
+#Task class
+class Task:
+    def __init__(self,task_id,description:str,priority:int):
         self.__next=None
-    def getData(self):
-        return self.__data
+        self.__task_id= task_id
+        self.__description=description
+        self.__priority=priority
+        self.__completed=False
+    #Getters and Setters
+    def getTaskId(self):
+        return self.__task_id
+    def getDescription(self):
+        return self.__description
+    def getPriority(self):
+        return self.__priority
+    def setPriority(self,priority):
+        self.__priority=priority
+    def getCompleted(self):
+        return self.__completed
+    def setCompleted(self,completed):
+        self.__completed=completed
     def getNext(self):
         return self.__next
     def setNext(self,new_next):
         self.__next=new_next
+
 #Linked List class
 class LinkedList:
     def __init__(self):
@@ -49,32 +64,15 @@ class LinkedList:
             self.__top=new_node
 
     
-#Task class
-class Task:
-    def __init__(self,description:str,priority:int,completed=False):
-        self.__task_id=0
-        self.__description=description
-        self.__priority=priority
-        self.__completed=completed
-    #Getters and Setters
-    def getTaskId(self):
-        return self.__task_id
-    def getDescription(self):
-        return self.__description
-    def getPriority(self):
-        return self.__priority
-    def setPriority(self,priority):
-        self.__priority=priority
-    def getCompleted(self):
-        return self.__completed
-    def setCompleted(self,completed):
-        self.__completed=True
+
 
 #Task Manager class
 class TaskManager:
     def __init__(self,task):
         self.__task=task
-    
+    def queueTask(self):
+        LinkedList.addNodeWithPriority()
+        
 
 
         
