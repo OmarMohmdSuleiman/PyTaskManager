@@ -66,6 +66,16 @@ class LinkedList:
         current.setNext(None)
         deleted=f"The deleted task is: {current}"
         return deleted
+    def displayCompleted(self):
+        if self.isEmpty():
+            print("empty")
+        current=self.__header
+        while current:
+            if current.getCompleted()==True:
+                print(f"ID: {current.getTaskId()} completed: {current.getCompleted()}")
+            else:
+                print("not completed")
+                current=current.getNext()
 
     
 
