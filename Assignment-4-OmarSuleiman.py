@@ -92,6 +92,14 @@ class LinkedList:
             print("||")
             current=current.getNext()
         print("None")
+    def getSize(self):
+        size=0
+        current=self.__header
+        while current:
+            size+=1
+            current=current.getNext()
+        return size
+
 
     
 
