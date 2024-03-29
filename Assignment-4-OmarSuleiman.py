@@ -84,6 +84,16 @@ class LinkedList:
                 
                 break
             self.__header=current.getNext()
+
+    def markAsNotCompleted(self):
+        current=self.__header
+        lst = []
+        while current:
+            if current.getCompleted()==False:
+                lst.append(current)
+
+            current = current.getNext()
+        return lst
     def displayLinkedList(self):
         if self.isEmpty():
             print("empty")
@@ -151,14 +161,53 @@ class TaskManager:
     def __init__(self):
         self.__task_queue=PriorityQueue()
         self.__task_history=Stack()
-        
+
 
 
 def displayMenu():
-    print('''1. Adding a new task to the task manager.
+    print('''\n1. Adding a new task to the task manager.
           \n2. Getting a task from the queue given a task id.
           \n3. Marking the highest priority task as completed and putting it in the task history.
           \n4. Displaying all tasks in order of priority.
           \n5. Displaying only the tasks that are not completed.
           \n6. Displaying the last completed task.
           \n7. Exit''')
+    
+def main():
+    displayMenu()
+    choice = int(input("Enter Your Choice: "))
+    
+
+    if choice == 1:
+        user_description = input("Enter Task Description: ")
+        user_priority = input("Enter Task Priority: ")
+
+        task = PriorityQueue()
+        task.enqueue(user_description, user_priority)
+        print("added")
+    
+    if choice == 2:
+        pass
+
+    if choice == 3:
+        ll = LinkedList()
+        tm = TaskManager()
+
+        ll.markAsCompleted()
+        
+    if choice == 4:
+        pq = PriorityQueue()
+        pq.displayPriorityQueue()
+
+    if choice == 5:
+        ll = LinkedList()
+        ll.markAsNotCompleted()
+    
+    if choice == 6:
+        ll = LinkedList()
+        ll.markAsCompleted
+
+
+
+
+main()
