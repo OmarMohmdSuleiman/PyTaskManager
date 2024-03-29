@@ -76,6 +76,13 @@ class LinkedList:
             else:
                 print("not completed")
                 current=current.getNext()
+    def markAsCompleted(self):
+        current=self.__header
+        while current:
+            if current.getCompleted()==False:
+                self.__header.setCompleted(True)
+                break
+            self.__header=current.getNext()
 
     
 
