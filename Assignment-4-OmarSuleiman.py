@@ -83,6 +83,15 @@ class LinkedList:
                 self.__header.setCompleted(True)
                 break
             self.__header=current.getNext()
+    def displayLinkedList(self):
+        if self.isEmpty():
+            print("empty")
+        current=self.__header
+        while current is not None:
+            print(f"ID: {current.getTaskId()} Deecription: {current.getDescription()}, Priority: {current.getPriority()}")
+            print("||")
+            current=current.getNext()
+        print("None")
 
     
 
