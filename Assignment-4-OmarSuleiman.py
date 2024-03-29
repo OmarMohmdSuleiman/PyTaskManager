@@ -60,6 +60,13 @@ class LinkedList:
         previous.setNext(new_node)
         new_node.setNext(current)
 
+    def deleteNodeWithPriority(self):
+        current=self.__header
+        self.__header=self.__header.getNext()
+        current.setNext(None)
+        deleted=f"The deleted task is: {current}"
+        return deleted
+
     
 
 
