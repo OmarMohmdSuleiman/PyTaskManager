@@ -99,7 +99,36 @@ class LinkedList:
             size+=1
             current=current.getNext()
         return size
+class PriorityQueue():
 
+    def __init__(self):
+
+        self.__linkedlist = LinkedList()
+
+
+
+    def enqueue(self,desc,prio):
+        t_id = 0
+        for i in range(self.__linkedlist.getSize()):
+            t_id += 1
+
+
+        new_node = Task(t_id,desc,prio)
+        
+        return self.__linkedlist.addNodeWithPriority(new_node)
+    
+
+
+    def dequeue(self) -> int:
+
+        self.__linkedlist.deleteNodeWithPriority()
+
+    def displayPriorityQueue(self):
+
+        self.__linkedlist.displayLinkedList()
+    def displayCompletedPriorityQueue(self):
+
+        self.__linkedlist.displayCompleted()
 
     
 
