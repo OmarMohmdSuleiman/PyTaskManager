@@ -9,18 +9,25 @@ class Task:
     #Getters and Setters
     def getTaskId(self):
         return self.__task_id
+    
     def getDescription(self):
         return self.__description
+    
     def getPriority(self):
         return self.__priority
+    
     def setPriority(self,priority):
         self.__priority=priority
+
     def getCompleted(self):
         return self.__completed
+    
     def setCompleted(self,completed):
         self.__completed=completed
+
     def getNext(self):
         return self.__next
+    
     def setNext(self,new_next):
         self.__next=new_next
 
