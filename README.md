@@ -1,4 +1,4 @@
-# PyTaskManager - Assignment 4
+# PyTaskManager System - Assignment 4
 
 ## This system should allow users to add tasks with different priorities, mark tasks as completed, and view tasks in a prioritized order through a graphical interface.
 
